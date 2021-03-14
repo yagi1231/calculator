@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>calculator</title>
+    <link rel="stylesheet" href="potepan.css">
+  </head>
+    <body>
+      <style>
+      body {
+        width:30%;
+      }
+    button
+    {
+        width: 100px;
+        height: 100px;
+        border-radius:20px;
+        margin:10px 0;
+        font-weight:bold;
+        font-size:20px;
+    }
+
+    
+    </style>
+    
+    <input style="width:400px;height:50px;font-size: 28px; text-align: right; background-color:black;color:white"/><br />
+  
+    
+  <script>
+    function update(v) {
+      
+      document.querySelector('input').value = v
+      
+    }
+    
+    function append(v) {
+      
+      document.querySelector('input').value += v 
+      
+    }
+    
+    function calc() {
+      
+      const x = document.querySelector('input').value
+      const z= new Function(' return '+x)
+
+      update(z().toString())
+    }
+    
+  </script>
+
+  <button onclick= "append('7')">7</button>
+  <button onclick="append('8')">8</button>
+  <button onclick="append('9')">9</button>
+  <button onclick= "append('+')">+</button>
+  <button onclick= "append('4')">4</button>
+  <button onclick= "append('5')">5</button>
+  <button onclick ="append('6')">6</button> 
+  <button onclick ="append('-')">-</button>
+  <button onclick ="append('1')">1</button>
+  <button onclick ="append('2')">2</button>
+  <button onclick ="append('3')">3</button>
+  <button onclick ="append('*')">*</button>
+  <button onclick ="append('0')">0</button> 
+  <button onclick ="append('00')">00</button>
+  <button onclick ="append('.')">.</button>
+  <button onclick ="append('/')">/</button>
+  <button onclick= "update('')"style="width:205px;">CRL</button>
+   <button onclick= "calc()"style="width:205px;">=</button>
+    </body>
+</html>
